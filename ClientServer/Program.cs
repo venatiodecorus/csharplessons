@@ -29,10 +29,10 @@ namespace ClientServer
 		public static void handle_clients(object client)
 		{
 			TcpClient tcp = (TcpClient)client;
+			NetworkStream stream = tcp.GetStream();
 
 			while (true)
 			{
-				NetworkStream stream = tcp.GetStream();
 				byte[] buffer = new byte[1024];
 				int byte_count = stream.Read(buffer, 0, buffer.Length);
 

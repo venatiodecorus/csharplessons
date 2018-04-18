@@ -20,6 +20,7 @@ namespace Client
 			client.Connect(ip, port);
 			NetworkStream stream = client.GetStream();
 
+			// Why does this need to be a delegate?
 			Thread thread = new Thread(o => receiveData((TcpClient)o));
 			thread.Start(client);
 
