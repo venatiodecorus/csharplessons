@@ -13,6 +13,7 @@ namespace Client
 	{
 		static void Main(string[] args)
 		{
+			//Test
 			IPAddress ip = IPAddress.Parse("127.0.0.1");
 			int port = 1337;
 
