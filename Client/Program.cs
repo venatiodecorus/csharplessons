@@ -22,6 +22,10 @@ namespace Client
 			NetworkStream stream = client.GetStream();
 
 			// Why does this need to be a delegate?
+			// This works without the delegate as long as our provided function
+			// signature matches what the delegate expects. So if we make
+			// receiveData accept just an object, we can call it directly
+			// without this lambda function.
 			Thread thread = new Thread(o => receiveData((TcpClient)o));
 			thread.Start(client);
 
